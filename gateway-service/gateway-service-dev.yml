@@ -7,11 +7,13 @@ management:
   endpoints:
     web:
       exposure:
-        include: gateway,metrics,refresh
+        include: gateway,metrics
 
 spring:
   cloud:
     gateway:
+      defaultFilters: TokenRelay
+
       routes:
         - id: web-service
         uri: lb://web-service
