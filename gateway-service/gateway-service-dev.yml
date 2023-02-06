@@ -1,0 +1,17 @@
+server:
+ port: 8085
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
+eureka:
+  instance:
+    hostname: ${HOST_NAME:localhost}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8889/eureka
