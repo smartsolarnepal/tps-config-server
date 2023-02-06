@@ -11,6 +11,10 @@ management:
         include: refresh
 
 eureka:
+  instance:
+    hostname: localhost
   client:
     registerWithEureka: false
     fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8889/eureka
