@@ -1,3 +1,6 @@
+server:
+  port: 8889
+
 management:
   security:
     enabled: false
