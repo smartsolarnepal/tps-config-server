@@ -1,5 +1,5 @@
 server:
- port: 8085
+  port: 8085
 
 management:
   security:
@@ -12,17 +12,19 @@ management:
 spring:
   cloud:
     gateway:
-      defaultFilters: TokenRelay
-
       routes:
         - id: web-service
-        uri: lb://web-service
-
+          uri: lb://web-service
+          predicates:
+            - Path=/web/**
         - id: hotel-service
-        uri: lb://hotel-service
-
-        -id: user-service
-        uri: lb://user-service
+          uri: lb://hotel-service
+          predicates:
+            - Path=/hotels/**
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/users/**
 
 eureka:
   instance:
