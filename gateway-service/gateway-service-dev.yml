@@ -16,15 +16,15 @@ spring:
         - id: web-service
           uri: lb://web-service
           predicates:
-            - Path=/web/**
+            - Path=/api/web/**
         - id: hotel-service
           uri: lb://hotel-service
           predicates:
-            - Path=/hotels/**
+            - Path=/api/hotels/**
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/users/**
+            - Path=/api/users/**
 
 eureka:
   instance:
