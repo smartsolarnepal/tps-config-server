@@ -1,0 +1,29 @@
+server:
+  port: 8083
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:tps_web_db}?createDatabaseIfNotExist=true
+    username: ${DB_USER:root}
+    password: ${DB_PASS:root}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: ${DB_DDL:update}
+
+eureka:
+  instance:
+    hostname: ${HOST_NAME:localhost}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9999/eureka
+
