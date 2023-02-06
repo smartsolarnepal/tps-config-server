@@ -11,7 +11,7 @@ management:
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    uri: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:tps_web_db}?createDatabaseIfNotExist=true
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:tps_web_db}?createDatabaseIfNotExist=true
     username: ${DB_USER:root}
     password: ${DB_PASS:root}
   jpa:
